@@ -268,8 +268,28 @@ const handlePlantsClick = (e) => {
         </div>
         {!showCart? (
         <div className="product-grid">
-
-
+            {plantsArray.map((item, index)=>(
+                <div className="product-card" key={index}>
+                    <h1>{item.category}</h1>
+                    {item.plants.map((plant,idx)=>(
+                        <div className="product-list" key={idx}>
+                            <div className="product-title">
+                                <h1>{plant.name}</h1>
+                            </div>
+                            <div className='product-image'>
+                                <img src={plant.img} alt={plant.name} />
+                            </div>
+                            <div className='product-price'>
+                                {plant.price}
+                            </div>
+                            {plant.description}
+                        </div>
+                    )
+                    )
+                    }
+                </div>
+            )
+            )}
         </div>
  ) :  (
     <CartItem onContinueShopping={handleContinueShopping}/>
