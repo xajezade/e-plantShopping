@@ -269,18 +269,20 @@ const handlePlantsClick = (e) => {
         {!showCart? (
         <div className="product-grid">
             {plantsArray.map((item, index)=>(
-                <div className="product-card" key={index}>
-                    <h1>{item.category}</h1>
+                <div className="product-list" key={index}>
+                    <div className='plant_heading'>
+                        <h1>{item.category}</h1>
+                    </div>
                     {item.plants.map((plant,idx)=>(
-                        <div className="product-list" key={idx}>
-                            <div className="product-title">
+                        <div className="product-card" key={idx}>
+                            <div className="plantname_heading">
                                 <h1>{plant.name}</h1>
                             </div>
                             <div className='product-image'>
-                                <img src={plant.img} alt={plant.name} />
+                                <img src={plant.image} alt={plant.name} />
                             </div>
                             <div className='product-price'>
-                                {plant.price}
+                                {plant.cost}
                             </div>
                             {plant.description}
                         </div>
